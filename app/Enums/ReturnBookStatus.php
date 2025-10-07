@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum ReturnBookStatus
+enum ReturnBookStatus: string
 {
     case RETURNED = 'dikembalikan';
     case CHECKED  = 'pengecekan';
