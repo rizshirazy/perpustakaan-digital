@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { Link } from '@inertiajs/react';
 
-export default function NavLink({ active = false, url = '#', title = '', icon: Icon, ...props }) {
+export default function NavLinkResponsive({ active = false, url = '#', title = '', icon: Icon, ...props }) {
     return (
         <Link
             {...props}
@@ -10,7 +10,7 @@ export default function NavLink({ active = false, url = '#', title = '', icon: I
                 active
                     ? 'bg-gradient-to-r from-orange-400 to-orange-500 font-semibold text-white hover:text-white'
                     : 'text-muted-foreground hover:text-orange-500',
-                'flex items-center gap-3 rounded-lg transition-all duration-200',
+                'font-mediumtransition-all flex items-center gap-3 rounded-lg p-2 duration-200',
             )}
         >
             <Icon className="h-4 w-4" />
