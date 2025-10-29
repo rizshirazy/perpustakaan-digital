@@ -8,7 +8,7 @@ export default function NavLinkResponsive({ active = false, url = '#', title = '
             href={url}
             className={cn(
                 active
-                    ? 'bg-gradient-to-r from-orange-400 to-orange-500 font-semibold text-white hover:text-white'
+                    ? 'bg-gradient-to-r from-orange-500 to-orange-400 font-semibold text-white hover:text-white'
                     : 'text-muted-foreground hover:text-orange-500',
                 'font-mediumtransition-all flex items-center gap-3 rounded-lg p-2 duration-200',
             )}
