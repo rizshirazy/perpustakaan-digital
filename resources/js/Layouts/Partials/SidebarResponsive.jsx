@@ -25,7 +25,7 @@ import {
     IconVersions,
 } from '@tabler/icons-react';
 
-export default function SidebarResponsive({ url }) {
+export default function SidebarResponsive({ url, auth }) {
     return (
         <Sheet>
             <SheetTrigger asChild>

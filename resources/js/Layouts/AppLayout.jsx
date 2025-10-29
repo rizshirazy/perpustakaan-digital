@@ -1,5 +1,5 @@
 import ApplicationLogo from '@/Components/ApplicationLogo';
-import { Avatar, AvatarFallback } from '@/Components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar';
 import { Button } from '@/Components/ui/button';
 import {
     DropdownMenu,
@@ -15,6 +15,7 @@ import Sidebar from './Partials/Sidebar';
 import SidebarResponsive from './Partials/SidebarResponsive';
 
 export default function AppLayout({ title, children }) {
+    const auth = usePage().props.auth.user;
     const { url } = usePage();
 
     return (
@@ -30,7 +31,7 @@ export default function AppLayout({ title, children }) {
                         </div>
                         <div className="flex-1">
                             {/* Sidebar */}
-                            <Sidebar url={url} />
+                            <Sidebar url={url} auth={auth} />
                         </div>
                     </div>
                 </div>
@@ -38,14 +39,15 @@ export default function AppLayout({ title, children }) {
                 <div className="flex w-full flex-col lg:w-4/5">
                     <header className="flex h-12 items-center justify-between gap-4 border-b px-4 lg:h-[60px] lg:justify-end lg:px-6">
                         {/* Sidebar responsive */}
-                        <SidebarResponsive url={url} />
+                        <SidebarResponsive url={url} auth={auth} />
                         {/* Dropdown */}
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="ghost" className="flex gap-x-2">
-                                    <span>Hi, Bang Iky</span>
+                                    <span>Hi, {auth.name}</span>
                                     <Avatar>
-                                        <AvatarFallback>B</AvatarFallback>
+                                        <AvatarImage src={auth.avatar} alt={auth.name} />
+                                        <AvatarFallback>{auth.name.charAt(0)}</AvatarFallback>
                                     </Avatar>
                                 </Button>
                             </DropdownMenuTrigger>
